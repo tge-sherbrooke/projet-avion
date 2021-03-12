@@ -8,8 +8,9 @@ Le schéma vous présente les différentes parties en haut niveau. Il ne s'agit 
 ## Spécifications électriques
 Ce projet va utiliser à peu près toutes les entrée/sorties (E/S) du Rapsberry Pi. C'est à vous de vous assurez de bien utiliser toutes les E/S de manière optimale. Tenez un tableau à jour avec les connexions entre le rPi et vos différents périphériques. Voici un exemple:
 
-| # pin | Nom E/S | Connecté à |
-| 2     | GPIO 2  | Bouton *joystick* |
+| # pin | Nom E/S | Connecté à       |
+|-------|---------|-------------------|
+| 2     | GPIO 2  | Bouton *joystick* (SW) |
 
 ### I2C
 Le protocole I2C permet de communiquer avec plusieurs périphériques sur la même paire SDA/SCL. Pour ce projet là, l'écran LCD et l'ADC utilisent le protocole I2C. Vous pouvez donc les relier sur la même paire.
