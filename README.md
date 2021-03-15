@@ -19,7 +19,27 @@ Le protocole I2C permet de communiquer avec plusieurs périphériques sur la mê
 Vous aurez besoin de fournir du 3.3V ainsi que du 5V. Ce dernier est utilisé par les moteurs (moteur pour l'hélice et le servomoteur). **N'utilisez pas l'alimentation venant du rPi pour ce projet**. Utilisez plutôt le module d'alimentation venant avec votre kit. Il peut être alimenté par USB ou par une pile 9V. Le puissance requise pour alimenter le projet est trop grande pour le rPi.
 
 ## Spécifications logicielles
-À venir
+Le fonctionnement de l'avion est divisé en trois états:
+* En attente (E1)
+* Pré-vol (E2)
+* Prêt à voler (E3)
 
+![Diagramme d'état](/img/state.png)
+Lorsque le programme est démarré, il rentre dans l'état E1. Une fois dans l'état E1, le programme peut rester dans cet état jusqu'à que la condition C2 soit vraie. La liste des conditions est présentée plus bas. Lorsque la condition C2 est vraie, le programme passe dans l'état E2. Dans l'état E2, il y a trois possibilités: rester dans E2, revenir dans E1 ou passer à l'état E3. Ces trois possibilités sont sont choisies selon les conditions C3, C4 et C5. Finalement, l'état E3 est atteint lorsque le programme est dans l'état E2 et que la condition C5 soit vraie. Dans cet état, il est possible de revenir à l'état E1 si la condition C7 est vraie.
+
+Voici le tableau expliquant chacune des conditions
+
+| Condition | Vrai si |
+|--|--|
+|C1|C2 fausse|
+|C2|Code carte RFID autorisé à utiliser l'avion|
+|C3|Touche # appuyée|
+|C4|C3 et C5 fausses|
+|C5|Interrupteur PWR en position "ON"|
+|C6|C7 fausse|
+|C7|Interrupteur PWR en position "OFF"|
+
+### Conception d'un programme à partir d'un diagramme d'état
+Lorsqu'un programme
 ## Pointage pour le projet
 À venir
