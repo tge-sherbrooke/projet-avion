@@ -115,10 +115,27 @@ def loop():
 ```
 
 ### État 1 - En attente
-Dans cet état, le système au complet est alimenté, mais il est impossible de contrôler les moteurs (*DC* et servo), le clavier ne répond pas et l'interrupteur ne fait rien. Le programme affiche le texte "Scannez carte" sur le LCD puis attend qu'une carte ou badge *RFID* soit passé près du capteur *RFID*. Lorsqu'une carte ou badge est détecté, le programme va faire une requête au serveur de contrôle pour savoir si cette carte à le droit d'utiliser l'avion. Dans le cas que la carte soit autorisée, le programme peut passer à l'état 2. Sinon, le message d'erreur suivant apparaît pendant une seconde : "Carte non-autorisee". Après une seconde, le message "Scannez carte" revient et le programme retourne en attente. Voici la séquence à respecter:
+Dans cet état, le système au complet est alimenté, mais il est impossible de contrôler les moteurs (*DC* et servo), le clavier ne répond pas et l'interrupteur ne fait rien. Le programme affiche le texte "Scannez carte" sur le LCD puis attend qu'une carte ou badge *RFID* soit passé près du capteur *RFID*. Lorsqu'une carte ou badge est détecté, le programme va faire une requête au serveur de contrôle pour savoir si cette carte à le droit d'utiliser l'avion. La requête GET doit avoir l'URI suivante: `/rfid/{rfidcardcode}`. Dans le cas que la carte soit autorisée, le programme peut passer à l'état 2. Sinon, le message d'erreur suivant apparaît pendant une seconde : "Carte non-autorisee". Après une seconde, le message "Scannez carte" revient et le programme retourne en attente. Voici la séquence à respecter:
 ![état 1](/img/etat1.png)
 ### État 2 - Pré-vol
+Le pré-vol permet d'entrer le code de l'aéroport de destination, comme dans un véritable avion. Le code est composé de trois chiffres. Une fois le code entré via le clavier, vous devrez faire une requête à l'API que vous allez avoir développé dans votre cours en informatique. Il s'agit de faire une requête GET avec l'URI suivante: `/airports/{airportcode}`. Votre API devra retourner le nom de l'aéroport.
 
+Voici le tableau contenant les aéroports à implémenter dans votre API:
+
+| Code numérique | Nom de l'aéroport|
+|----|----|
+| 101 | YUL Montreal |
+| 111 | ATL Atlanta |
+| 222 | HND Tokyo |
+| 764 | LHR London |
+| 492 | CAN Baiyun |
+| 174 | CDG Paris |
+| 523 | AMS Amsterdam |
+
+Une fois le code entré et le nom de l'aéroport obtenu, le LCD affiche qu'il est possible de démarrer l'avion en passant l'interrupteur PWR à la position ON. Une fois fait, le programme peut passer à l'état 3.
+![état 2](/img/etat2.png)
 ### État 3 - Prêt à voler
+
+### Spécification de l'API authentification et d'obtention des noms d'aéroport
 ## Pointage pour le projet
 À venir
