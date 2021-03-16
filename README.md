@@ -135,7 +135,21 @@ Voici le tableau contenant les aéroports à implémenter dans votre API:
 Une fois le code entré et le nom de l'aéroport obtenu, le LCD affiche qu'il est possible de démarrer l'avion en passant l'interrupteur PWR à la position ON. Une fois fait, le programme peut passer à l'état 3.
 ![état 2](/img/etat2.png)
 ### État 3 - Prêt à voler
+Dans cet état, les commandes de l'avion deviennent disponibles et il est possible d'activer le moteur et servo moteur. Lorsque le *joystick* est utilisé, le moteur et le servo moteur réagissent selon les spéfications suivantes:
+* L'axe X sert à actionner le servo-moteur
+* L'axe Y sert à actionner le moteur
+* Au repos, le servo est à l'angle 0°
+* Au repos, le moteur est à 0%
+* Il y a une relation linéaire entre la valeur du potentiomètre X et l'angle du servo moteur
+  * 0-255 -> 0 à 180°
+* Il y a une relation linéaire enter la valeur du potentiomètre Y et la puissance fournie au moteur
+  * 0-255 -> -100% à 100%
 
-### Spécification de l'API authentification et d'obtention des noms d'aéroport
+Ensuite, toutes les 100 ms, le LCD doit afficher:
+* La puissance en % fournie au moteur
+* L'angle du servo-moteur
+* La destination
+
+Pour respecter la contraintes de 100 ms, utiliser les fonctions déjà disponibles en Python pour utiliser des timers. Voir [ce guide](https://realpython.com/python-timer/) pour plus de détails sur le respect du 100 ms.
 ## Pointage pour le projet
 À venir
