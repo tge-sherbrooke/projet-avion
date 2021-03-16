@@ -8,9 +8,55 @@ Le schéma vous présente les différentes parties en haut niveau. Il ne s'agit 
 ## Spécifications électriques
 Ce projet va utiliser à peu près toutes les entrée/sorties (E/S) du Rapsberry Pi. C'est à vous de vous assurez de bien utiliser toutes les E/S de manière optimale. Tenez un tableau à jour avec les connexions entre le rPi et vos différents périphériques. Voici un exemple:
 
-| # pin | Nom E/S | Connecté à       |
+### Tableau de connexions pour le *header* du *Raspberry Pi*
+| # *pin* | Nom E/S | Connecté à       |
 |-------|---------|-------------------|
 | 2     | GPIO 2  | Bouton *joystick* (SW) |
+
+### Tableau de connexions pour le *joystick*
+| Label (*pin*) | Connecté à       |
+|-------|-------------------|
+| 2     | Bouton *joystick* (SW) |
+
+### Tableau de connexions pour l'*ADC*
+| Label (*pin*) | Connecté à       |
+|-------|-------------------|
+| 2     | Bouton *joystick* (SW) |
+
+### Tableau de connexions pour le *LCD*
+| Label (*pin*) | Connecté à       |
+|-------|-------------------|
+| 2     | Bouton *joystick* (SW) |
+
+### Tableau de connexions pour le capteur *RFID*
+| Label (*pin*) | Connecté à       |
+|-------|-------------------|
+| 2     | Bouton *joystick* (SW) |
+
+### Tableau de connexions pour le clavier
+| Label (*pin*) | Connecté à       |
+|-------|-------------------|
+| 2     | Bouton *joystick* (SW) |
+
+### Tableau de connexions pour le contrôle moteur (L293D)
+| Label (*pin*) | Connecté à       |
+|-------|-------------------|
+| 2     | Bouton *joystick* (SW) |
+
+### Tableau de connexions pour le moteur *DC*
+| Label (*pin*) | Connecté à       |
+|-------|-------------------|
+| 2     | Bouton *joystick* (SW) |
+
+### Tableau de connexions pour le servomoteur
+| Label (*pin*) | Connecté à       |
+|-------|-------------------|
+| 2     | Bouton *joystick* (SW) |
+
+### Tableau de connexions pour l'interrupteur
+| Label (*pin*) | Connecté à       |
+|-------|-------------------|
+| 2     | Bouton *joystick* (SW) |
 
 ### I2C
 Le protocole I2C permet de communiquer avec plusieurs périphériques sur la même paire SDA/SCL. Pour ce projet là, l'écran LCD et l'ADC utilisent le protocole I2C. Vous pouvez donc les relier sur la même paire.
@@ -67,5 +113,12 @@ def loop():
       if C7 is True:
         currentstate = "E1"
 ```
+
+### État 1 - En attente
+Dans cet état, le système au complet est alimenté, mais il est impossible de contrôler les moteurs (*DC* et servo), le clavier ne répond pas et l'interrupteur ne fait rien. Le programme affiche le texte "Scannez carte" sur le LCD puis attend qu'une carte ou badge *RFID* soit passé près du capteur *RFID*. Lorsqu'une carte ou badge est détecté, le programme va faire une requête au serveur de contrôle pour savoir si cette carte à le droit d'utiliser l'avion. Dans le cas que la carte soit autorisée, le programme peut passer à l'état 2. Sinon, le message d'erreur suivant apparaît pendant une seconde : "Carte non-autorisee". Après une seconde, le message "Scannez carte" revient et le programme retourne en attente. Voici la séquence à respecter:
+![état 1](/img/etat1.png)
+### État 2 - Pré-vol
+
+### État 3 - Prêt à voler
 ## Pointage pour le projet
 À venir
