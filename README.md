@@ -46,23 +46,23 @@ Lorsqu'un programme fonctionne selon le paradigme de diagramme d'état, il est d
 def loop():
   currentstate = "E1"
   while (True):
+
     if currentstate == "E1":
       E1()
-
       # Validation des conditions pour la mise à jour de l'état
       if C2 is True:
         currentstate = "E2"
+
     elif currentstate == "E2":
       E2()
-
       # Validation des conditions pour la mise à jour de l'état
       if C3 is True:
         currentstate = "E1"
       elif C4 is True:
         currentstate = "E3"
+
     elif currentstate == "E3":
       E3()
-
       # Validation des conditions pour la mise à jour de l'état
       if C7 is True:
         currentstate = "E1"
