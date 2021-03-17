@@ -138,7 +138,7 @@ Une fois le code entré et le nom de l'aéroport obtenu, le LCD affiche qu'il es
 Dans cet état, les commandes de l'avion deviennent disponibles et il est possible d'activer le moteur et servo moteur. Lorsque le *joystick* est utilisé, le moteur et le servo moteur réagissent selon les spéfications suivantes:
 * L'axe X sert à actionner le servo-moteur
 * L'axe Y sert à actionner le moteur
-* Au repos, le servo est à l'angle 0°
+* Au repos, le servo est à l'angle 90°
 * Au repos, le moteur est à 0%
 * Il y a une relation linéaire entre la valeur du potentiomètre X et l'angle du servo moteur
   * 0-255 -> 0 à 180°
