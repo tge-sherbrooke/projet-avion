@@ -152,4 +152,8 @@ Ensuite, toutes les 100 ms, le LCD doit afficher:
 
 Pour respecter la contraintes de 100 ms, utiliser les fonctions déjà disponibles en Python pour utiliser des timers. Voir [ce guide](https://realpython.com/python-timer/) pour plus de détails sur le respect du 100 ms.
 ## Pointage pour le projet
-À venir
+Pour le pointage voici la description des points
+
+|Description|Points|
+|---|---|
+|Moteur|5 pts|
