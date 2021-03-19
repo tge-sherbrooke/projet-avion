@@ -144,12 +144,14 @@ Dans cet état, les commandes de l'avion deviennent disponibles et il est possib
   * 0-255 -> 0 à 180°
 * Il y a une relation linéaire enter la valeur du potentiomètre Y et la puissance fournie au moteur
   * 0-255 -> -100% à 100%
+* Lorsque vous appuyez sur le *joystick*, la vitesse et l'angle sont verrouillés. Ce qui veut dire que l'avion garde la vitesse et l'angle au moment où le *joystick* a été appuyé. Pour déverrouiller la vitesse et l'angle, il faut de nouveau appuyer sur le *joystick*.
 
 Ensuite, toutes les 100 ms, le LCD doit afficher:
 * La puissance en % fournie au moteur
 * L'angle du servo-moteur
 * La destination
 
+La difficulté pour le respect du 100 ms est que votre boucle de l'état 3 doit s'exécuter plus rapidement que 100 ms pour donner l'impression que les réponses du joystick soit instanné.
 Pour respecter la contraintes de 100 ms, utiliser les fonctions déjà disponibles en Python pour utiliser des timers. Voir [ce guide](https://realpython.com/python-timer/) pour plus de détails sur le respect du 100 ms.
 ## Pointage pour le projet
 Pour le pointage voici la description des points
