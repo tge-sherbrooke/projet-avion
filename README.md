@@ -153,5 +153,24 @@ Ensuite, toutes les 100 ms, le LCD doit afficher:
 
 La difficulté pour le respect du 100 ms est que votre boucle de l'état 3 doit s'exécuter plus rapidement que 100 ms pour donner l'impression que les réponses du joystick soit instanné.
 Pour respecter la contraintes de 100 ms, utiliser les fonctions déjà disponibles en Python pour utiliser des timers. Voir [ce guide](https://realpython.com/python-timer/) pour plus de détails sur le respect du 100 ms.
+
+## Tester l'utilisation d'un API
+
+En attendant que vous développiez votre propre API, il est possible d'utiliser un API déjà prêt pour obtenir les codes d'aéroport. Voici la requête à utiliser pour obtenir les codes:
+
+```
+GET http://bosco.pw:8085/airports/111
+```
+Il suffit de remplacer 111 dans l'exemple pour le code que vous souhaitez. Le nom de l'aéroport vous est retourné .
+
+Pour pouvoir faire une requête à l'API en Python, vous pouvez utiliser le module *request*:
+
+```python
+import request
+
+response = requests.get("http://bosco.pw/airports/111")
+
+print(response.text)
+```
 ## Pointage pour le projet
 À venir
