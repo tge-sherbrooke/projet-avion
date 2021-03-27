@@ -173,4 +173,8 @@ response = requests.get("http://bosco.pw/airports/111")
 print(response.text)
 ```
 ## Pointage pour le projet
-À venir
+Pour le pointage voici la description des points
+
+|Description|Points|
+|---|---|
+|Moteur|5 pts|
