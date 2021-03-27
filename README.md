@@ -159,7 +159,7 @@ Pour respecter la contraintes de 100 ms, utiliser les fonctions déjà disponibl
 En attendant que vous développiez votre propre API, il est possible d'utiliser un API déjà prêt pour obtenir les codes d'aéroport. Voici la requête à utiliser pour obtenir les codes:
 
 ```
-GET http://bosco.pw:8085/airports/111
+GET http://bosco.pw/airports/111
 ```
 Il suffit de remplacer 111 dans l'exemple pour le code que vous souhaitez. Le nom de l'aéroport vous est retourné .
 
