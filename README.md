@@ -1,7 +1,14 @@
 # projet-avion
 Description du projet pour le module 2 du cours Introduction aux objets connectés (243-413-SH)
 
-## Schéma
+## Présentation
+Le but du projet est de simuler plusieurs parties d'un avion:
+* Contrôle du moteur et d'un aileron
+* Affichage des paramètres de vol
+* Contrôle d'accès
+* Sélection de la destination
+
+### Schéma concept partie physique
 ![schéma bloc](/img/schema.jpeg)
 Le schéma vous présente les différentes parties en haut niveau. Il ne s'agit pas d'un schéma électrique. C'est à vous de s'occuper de relier les différentes parties.
 
