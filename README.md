@@ -184,4 +184,12 @@ Pour le pointage voici la description des points
 
 |Description|Points|
 |---|---|
-|Moteur|5 pts|
+|État 1|3 pts|
+|État 2|6 pts|
+|État 3|9 pts|
+|Conditions|3 pts|
+|Serveurs|2 pts|
+|Montage|3 pts|
+|Code|3 pts|
+|Tableau|1 pt|
+|Journal|1 pt|
